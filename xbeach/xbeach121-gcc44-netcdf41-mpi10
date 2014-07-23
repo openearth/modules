@@ -1,0 +1,7 @@
+#%Module 1.0
+#
+#  XBeach module for Groundhog Day release
+#
+prereq                  mpich2-x86_64
+prepend-path            PATH            /opt/xbeach/xbeach121-gcc44-netcdf41-mpi10/bin
+prepend-path            LD_LIBRARY_PATH /opt/xbeach/xbeach121-gcc44-netcdf41-mpi10/lib
