@@ -1,0 +1,12 @@
+#%Module 1.0
+#
+#  XBeach module for Groundhog Day release
+#
+set prefix /opt/xbeach/gcc_4.9.1_nompi
+
+prereq gcc/4.9.1
+prereq hdf5/1.8.13_gcc_4.9.1
+prereq netcdf/v4.3.2_v4.4.0_gcc_4.9.1
+
+prepend-path 	LD_LIBRARY_PATH 	$prefix/lib
+prepend-path 	PATH 			$prefix/bin
