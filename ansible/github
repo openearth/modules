@@ -1,0 +1,7 @@
+#%Module 1.0
+
+set prefix /opt/ansible/opt
+
+prepend-path 	PATH 			$prefix/bin
+
+setenv 		CONDA_DEFAULT_ENV 	$prefix

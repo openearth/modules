@@ -1,0 +1,18 @@
+#%Module 1.0
+## created by Mihau
+
+
+## Module help invocation
+proc ModulesHelp { } {
+	global version modroot
+    puts stderr "mpich2/1.4.1_gcc4.9.1 - sets the GNU mpich environment"
+    puts stderr "compiled with gfortran,gcc version 4.9.1"
+}
+
+
+## Module library modification
+set prefix /opt/mpich2/1.4.1_gcc4.9.1
+
+prepend-path    LD_LIBRARY_PATH         $prefix/lib
+prepend-path    MANPATH                 $prefix/share/man
+prepend-path    PATH                    $prefix/bin

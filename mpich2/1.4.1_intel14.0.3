@@ -1,0 +1,16 @@
+#%Module 1.0
+## created by Mihau
+
+## Module help invocation
+proc ModulesHelp { } {
+	global version modroot
+	puts stderr "mpich2/1.4.1_intel14.0.3 - sets the intel mpich environment"
+	puts stderr "compiled with intel compiler version 14.0.3"
+}
+
+## Module library modification
+set prefix /opt/mpich2/1.4.1_intel14.0.3
+
+prepend-path    LD_LIBRARY_PATH         $prefix/lib
+prepend-path    MANPATH                 $prefix/share/man
+prepend-path    PATH                    $prefix/bin
