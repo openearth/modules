@@ -7,7 +7,14 @@ proc ModulesHelp { } {
 	global version modroot
     puts stderr "mpich2/1.4.1_gcc4.9.1 - sets the GNU mpich environment"
     puts stderr "compiled with gfortran,gcc version 4.9.1"
+    puts stderr "This version is compiled with default process manager - hydra"
 }
+
+module-whatis "sets up mpich2 compiled with gcc 4.9.1"
+
+## Module requirements and conflict
+prereq gcc/4.9.1
+conflict mpich2/1.4.1_intel14.0.3 mpich2/1.4.1_intel14.0.3_+mpd
 
 
 ## Module library modification

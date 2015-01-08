@@ -1,0 +1,18 @@
+#%Module 1.0
+
+## Setting up environmental variables
+set prefix /opt/metis/5.1.0_intel14.0.3
+
+prepend-path    LD_LIBRARY_PATH         $prefix/lib
+prepend-path    PATH                    $prefix/bin
+
+## Help messages
+module-whatis "sets up metis partitioning with intel 14.0.3"
+
+## Module requirements and conflict
+prereq intel/14.0.3
+
+## Setting up environmental variables for compilers
+setenv METIS_DIR        $prefix
+prepend-path --delim " " 		CPPFLAGS 		-I$prefix/include
+prepend-path --delim " "        LDFLAGS         -L$prefix/lib

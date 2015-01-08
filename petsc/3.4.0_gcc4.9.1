@@ -1,0 +1,17 @@
+#%Module 1.0
+
+set prefix /opt/petsc/3.4.0_gcc4.9.1
+
+prepend-path 	LD_LIBRARY_PATH 	$prefix/lib
+prepend-path 	PATH 			$prefix/bin
+prepend-path    PKG_CONFIG_PATH         $prefix/lib/pkgconfig
+
+####
+
+
+## Help messages
+module-whatis "sets up PETSC with gcc 4.9.1 and mpich2"
+
+## Module requirements and conflict
+prereq gcc/4.9.1 
+prereq mpich2/1.4.1_gcc4.9.1

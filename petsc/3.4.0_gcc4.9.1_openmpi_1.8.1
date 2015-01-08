@@ -1,0 +1,16 @@
+#%Module 1.0
+
+set prefix /opt/petsc/with_openmpi_1.8.1/3.4.0_gcc_4.9.1
+
+prepend-path 	LD_LIBRARY_PATH 	$prefix/lib
+prepend-path 	PATH 			$prefix/bin
+prepend-path    PKG_CONFIG_PATH         $prefix/lib/pkgconfig
+
+####
+## Help messages
+module-whatis "sets up PETSC with gcc 4.9.1 and openMPI"
+
+## Module requirements and conflict
+prereq gcc/4.9.1
+prereq openmpi/1.8.1_gcc_4.9.1
+

@@ -1,0 +1,5 @@
+#%Module 1.0
+
+set prefix /opt/anaconda/lnx64/bin
+
+prepend-path 	PATH 			$prefix

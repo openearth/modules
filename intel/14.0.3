@@ -1,0 +1,30 @@
+#%Module 1.0
+
+## Module help invocation
+proc ModulesHelp { } {
+	global version modroot
+	puts stderr "intel/14.0.3 - sets the intel compiler using composer"
+	puts stderr "composer_xe_2013_sp1.3.174, icc,ifort ver 14.0.3"
+}
+
+## Module library modification
+set prefix /opt/intel/composer_xe_2013_sp1.3.174
+
+prepend-path 	CPATH 			$prefix/ipp/include:$prefix/mkl/include:$prefix/tbb/include
+prepend-path 	INTEL_LICENSE_FILE 	$prefix/licenses:/opt/intel/licenses:/u/kleczek/intel/licenses
+prepend-path 	LD_LIBRARY_PATH 	$prefix/compiler/lib/intel64:$prefix/mpirt/lib/intel64:$prefix/ipp/lib/intel64:$prefix/mkl/lib/intel64:$prefix/tbb/lib/intel64/gcc4.4
+prepend-path 	LIBRARY_PATH 		$prefix/compiler/lib/intel64:$prefix/ipp/lib/intel64:$prefix/mkl/lib/intel64:$prefix/tbb/lib/intel64/gcc4.4
+prepend-path 	MANPATH 		$prefix/man/en_US:/usr/local/share/man:/usr/share/man/en:/usr/share/man
+prepend-path 	MIC_LD_LIBRARY_PATH 	$prefix/compiler/lib/mic:$prefix/mpirt/lib/mic:$prefix/mkl/lib/mic:$prefix/tbb/lib/mic
+prepend-path 	MIC_LIBRARY_PATH 	$prefix/tbb/lib/mic
+prepend-path 	NLSPATH 		$prefix/compiler/lib/intel64/locale/%l_%t/%N:$prefix/ipp/lib/intel64/locale/%l_%t/%N:$prefix/mkl/lib/intel64/locale/%l_%t/%N:$prefix/debugger/gdb/intel64_mic/py26/share/locale/%l_%t/%N:$prefix/debugger/gdb/intel64/py26/share/locale/%l_%t/%N:$prefix/debugger/intel64/locale/%l_%t/%N
+prepend-path 	PATH 			$prefix/bin/intel64:$prefix/mpirt/bin/intel64:$prefix/debugger/gdb/intel64_mic/py26/bin:$prefix/debugger/gdb/intel64/py26/bin:$prefix/bin/intel64_mic:$prefix/debugger/gui/intel64
+
+setenv 		GDBSERVER_MIC 		$prefix/debugger/gdb/target/mic/bin/gdbserver
+setenv 		GDB_CROSS 		$prefix/debugger/gdb/intel64_mic/py26/bin/gdb-mic
+setenv 		IDB_HOME 		$prefix/bin/intel64
+setenv 		INCLUDE 		$prefix/mkl/include
+setenv 		IPPROOT 		$prefix/ipp
+setenv 		MKLROOT 		$prefix/mkl
+setenv 		MPM_LAUNCHER 		$prefix/debugger/mpm/bin/start_mpm.sh
+setenv 		TBBROOT 		$prefix/tbb

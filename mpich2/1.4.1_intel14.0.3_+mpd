@@ -6,18 +6,18 @@ proc ModulesHelp { } {
 	global version modroot
 	puts stderr "mpich2/1.4.1_intel14.0.3 - sets the intel mpich environment"
 	puts stderr "compiled with intel compiler version 14.0.3"
-	puts stderr "This version is compiled with default process manager - hydra"
+	puts stderr "contain mpd PM, since version 1.2.1 hydra replaced mpd as the default mpich process manager"
 }
 
-module-whatis "sets up mpich2 compiled with intel 14.0.3"
+module-whatis "sets up mpich2 compiled with intel 14.0.3 and mpd functionality"
 
 ## Module requirements and conflict
-prereq intel/14.0.3
-conflict mpich2/1.4.1_gcc4.9.1 mpich2/1.4.1_intel14.0.3_+mpd
+prereq gcc/4.9.1
+conflict mpich2/1.4.1_intel14.0.3 mpich2/1.4.1_gcc4.9.1
 
 
 ## Module library modification
-set prefix /opt/mpich2/1.4.1_intel14.0.3
+set prefix /opt/mpich2/1.4.1_intel14.0.3_+mpd
 
 prepend-path    LD_LIBRARY_PATH         $prefix/lib
 prepend-path    MANPATH                 $prefix/share/man

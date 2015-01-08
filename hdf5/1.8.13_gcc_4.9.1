@@ -4,3 +4,11 @@ set prefix /opt/hdf5/1.8.13_gcc_4.9.1
 
 prepend-path 	LD_LIBRARY_PATH 	$prefix/lib
 prepend-path 	PATH 			$prefix/bin
+
+## Help messages
+module-whatis "sets up hdf5 with gcc 4.9.1"
+
+## Module requirements and conflict
+prereq gcc/4.9.1
+
+

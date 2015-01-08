@@ -1,6 +1,6 @@
 #%Module 1.0
 
-set prefix /opt/ansible/opt
+set prefix /opt/ansible
 
 prepend-path 	PATH 			$prefix/bin
 
