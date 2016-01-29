@@ -1,5 +1,6 @@
 #%Module 1.0
 
-set prefix /opt/anaconda/lnx64/bin
+set prefix /opt/anaconda/lnx64
 
-prepend-path 	PATH 			$prefix
+prepend-path 	PATH 			$prefix/bin
+prepend-path 	LD_LIBRARY_PATH         $prefix/lib
