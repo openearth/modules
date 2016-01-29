@@ -4,3 +4,4 @@ set prefix /opt/anaconda/lnx64
 
 prepend-path 	PATH 			$prefix/bin
 prepend-path 	LD_LIBRARY_PATH         $prefix/lib
+prepend-path    LD_LIBRARY_PATH         $prefix/envs/main/lib
