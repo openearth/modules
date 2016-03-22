@@ -1,0 +1,12 @@
+#%Module 1.0
+
+set prefix /opt/java/jdk_1.7_i586
+
+setenv          JAVA_HOME               $prefix
+prepend-path    PATH                    $prefix/bin
+
+####
+## Help messages
+module-whatis "sets up java development kit from Oracle for 32bit linux"
+
+

@@ -1,7 +1,17 @@
 #%Module 1.0
 
+proc ModulesHelp { } {
+    puts stderr "You can now load the conda environment with the command:"
+    puts stderr "  $ source activate main"
+}
+
+
 set prefix /opt/anaconda/lnx64
 
 prepend-path 	PATH 			$prefix/bin
-prepend-path 	LD_LIBRARY_PATH         $prefix/lib
-prepend-path    LD_LIBRARY_PATH         $prefix/envs/main/lib
+
+if { [ module-info mode load ] } {
+	puts stderr "Module anaconda loaded."
+	ModulesHelp
+}
+

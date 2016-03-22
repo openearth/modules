@@ -1,0 +1,13 @@
+#%Module 1.0
+
+set prefix /opt/java/apache-ant-1.9.4
+
+prepend-path    PATH                    $prefix/bin
+
+####
+## Help messages
+module-whatis "sets up java build  system ant from apache"
+
+## Module requirements and conflict
+prereq java/jdk_1.8_oracle
+

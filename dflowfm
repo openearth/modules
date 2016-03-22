@@ -1,0 +1,28 @@
+#%Module 1.0
+
+proc ModulesHelp { } {
+	global version modroot
+  	puts stderr "This module loads scripts necessary for running and submitting D-Flow FM	"
+	puts stderr " * list_dflowfm.sh          : list of available on h6 D-Flow FM versions"
+	puts stderr " * run_dflowfm.sh           : to run sequential run (short runs) "
+	puts stderr " * generate_parallel_mdu.sh : generate mdu files for a parallel run "
+	puts stderr " * submit_dflowfm.sh        : submits the run to the queue "
+	puts stderr " * run_dfmoutput.sh         : dfmoutput (map merge) tool"
+	puts stderr "NOTE: use option --help with selected script to see necessary steps"
+	puts stderr "" 
+	puts stderr "User must either specify a version by -v <x.x.xxx.xxxxx> "
+	puts stderr " or rely on default which is set to the version [file readlink /opt/dflowfm/current]"
+}
+
+module-whatis "loads necessary scripts for D-Flow FM run on h6"
+
+set		prefix 		/opt/dflowfm
+prepend-path	PATH	$prefix/scripts
+
+set curMod [module-info name]
+if { [ module-info mode load ] } {
+	puts stderr "Module dflowfm loaded."
+	ModulesHelp
+}
+
+

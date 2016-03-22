@@ -1,0 +1,19 @@
+#%Module 1.0
+
+## Module help invocation
+
+proc ModulesHelp { } {
+	global version modroot
+	puts stderr "intel/5.0.3 - Sets up the Intel MPI Library
+}
+
+## Module library modification
+
+set prefix /opt/intel/impi/5.0.3.048
+
+prepend-path 	LD_LIBRARY_PATH 	$prefix/intel64/lib
+prepend-path 	MANPATH 		$prefix/man:/usr/share/man
+prepend-path 	PATH 			$prefix/intel64/bin
+
+setenv 		I_MPI_ROOT		$prefix
+

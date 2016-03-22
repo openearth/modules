@@ -1,0 +1,12 @@
+#%Module 1.0
+
+set prefix /opt/matlab/2014a
+
+setenv          MATLAB_DIR              $prefix
+prepend-path    PATH                    $prefix/bin
+
+####
+## Help messages
+module-whatis "sets up matlab"
+
+
