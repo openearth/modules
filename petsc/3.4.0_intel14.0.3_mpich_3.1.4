@@ -1,0 +1,16 @@
+#%Module 1.0
+
+set prefix /opt/petsc/with_mpich_3.1.4/3.4.0_intel14.0.3
+
+prepend-path 	LD_LIBRARY_PATH 	$prefix/lib
+prepend-path 	PATH 			$prefix/bin
+prepend-path    PKG_CONFIG_PATH         $prefix/lib/pkgconfig
+
+####
+## Help messages
+module-whatis "sets up PETSC with intel 14.0.3 and openMPI"
+
+## Module requirements and conflict
+prereq intel/14.0.3
+#prereq openmpi/1.8.1_intel_14.0.3 
+

@@ -1,0 +1,8 @@
+#%Module 1.0
+
+set prefix /opt/valgrind
+
+prepend-path    LD_LIBRARY_PATH         $prefix/lib
+prepend-path    LD_LIBRARY_PATH         $prefix/lib/valgrind
+prepend-path    PATH                    $prefix/bin
+prepend-path    PKG_CONFIG_PATH         $prefix/lib/pkgconfig
